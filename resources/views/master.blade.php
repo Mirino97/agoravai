@@ -12,19 +12,22 @@
             <p>LOGO</p>
         </div>
         <div id="filler"></div>
-        <button class="button-home">
+        <a href="/" class="button-home">
             Home
-        </button>
-        <button class="button-home">
+        </a>
+        <a href="/html" class="button-home">
             HTML
-        </button>
-        <button class="button-home">
+        </a>
+        <a href="/css1" class="button-home">
             CSS
-        </button>
-        <button class="button-home">
+        </a>
+        <a href="/laravel" class="button-home">
             Laravel
-        </button>
+        </a>
     </div>
+
+    @yield('content')
+
 
 </body>
 </html>

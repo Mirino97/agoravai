@@ -25,18 +25,18 @@
 
 .button-home {
 	font-family: "Monospace";
+	text-decoration: none;
 	height: 10px;
 	background-color: #66e0ff;
 	border: solid;
 	border-color: #66e0ff;
 	border-radius: 2px;
 	padding: 15px 15px;
-	display: inline-block;
 	font-size: 16px;
 	margin: 10px 5px 10px 5px;
 	transition-duration: 0.4s;
 	cursor: pointer;
-	line-height: 0px; /* Used to put the horizontal text where you want */
+	line-height: 10px; /* Used to put the horizontal text where you want */
 }
 
 .button-home:hover {
@@ -45,9 +45,15 @@
 
 body {
 	margin: 0px;
-	background-color: #e6e8e8;
+	background-color: #dcdcde;
+
 }
 
 p {
 	margin: 0px;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
 }

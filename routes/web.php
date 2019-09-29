@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('master');
 });
+
+Route::get('/html', function () {
+    return view('html');
+});
+
+Route::get('/css1', function () {
+    return view('css1');
+});
+
+
+Route::get('/laravel', function () {
+    return view('laravel');
+});
