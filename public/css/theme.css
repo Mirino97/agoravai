@@ -1,0 +1,53 @@
+#navbar {
+	border-style: solid;
+	border-width: 1px;
+	height: 100px;
+	width: 100vw;
+	background-color: #343a40;
+	display: inline-flex;
+	align-items: center;
+}
+
+#filler { /* Used to separate the logo and the buttons on an inline-flex situation*/
+	flex-grow: 1; /* No matter how big the buttons or the logo gets, the spacing will always be there*/
+	background-color: blue;
+	padding: 10px;
+}
+
+#navbar-logo {
+	color: white;
+	font-family: "Monospace";
+	font-size: 20px;
+	margin: 20px 20PX 20px 20px;
+
+}
+
+
+.button-home {
+	font-family: "Monospace";
+	height: 10px;
+	background-color: #66e0ff;
+	border: solid;
+	border-color: #66e0ff;
+	border-radius: 2px;
+	padding: 15px 15px;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px 5px 10px 5px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	line-height: 0px; /* Used to put the horizontal text where you want */
+}
+
+.button-home:hover {
+  background-color: white;
+}
+
+body {
+	margin: 0px;
+	background-color: #e6e8e8;
+}
+
+p {
+	margin: 0px;
+}
