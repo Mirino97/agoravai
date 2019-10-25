@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class usuarios extends Model
+class cadastros extends Model
 {
     protected $table = 'Cadastros';
 
@@ -13,4 +13,10 @@ class usuarios extends Model
     	'telefone',
     	'email',
     ];
+
+    public function description() {
+
+    	return $this->hasOne('App\informacao');
+    }
 }
+

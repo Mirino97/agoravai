@@ -18,4 +18,12 @@
 		<input type="submit" name="botaoSubmit" value="Update">
 	</div>
 </form>
+
+<div>
+
+	{{--PORQUE CARALHO?????--}}
+	@if( !is_null($user->description))
+		<li>{{ $user->description->informacao }}</li>
+	@endif
+</div>
 @endsection

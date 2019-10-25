@@ -25,15 +25,15 @@
 			<th scope="col">Telefone</th>
 			<th scope="col">Email</th>
 		</tr>
-		@foreach ($usuarios as $usuarios_k => $usuarios_v)
+		@foreach ($cadastros as $cadastros_k => $cadastros_v)
 
 			<tr>
-				<td>{{$usuarios_v['id']}}</td>
-				<td><a href="{{url("/laravel/".$usuarios_v['id']."/edit")}}" class="btn bg-success" style="color: white">{{$usuarios_v['nome']}}</a></td>
-				<td>{{$usuarios_v['telefone']}}</td>
-				<td>{{$usuarios_v['email']}}</td>
+				<td>{{$cadastros_v['id']}}</td>
+				<td><a href="{{url("/laravel/".$cadastros_v['id']."/edit")}}" class="btn bg-success" style="color: white">{{$cadastros_v['nome']}}</a></td>
+				<td>{{$cadastros_v['telefone']}}</td>
+				<td>{{$cadastros_v['email']}}</td>
 				<td>
-				<a href="{{url("/laravel/".$usuarios_v['id']."/delete")}}" class="btn btn-danger">Delete</a>
+				<a href="{{url("/laravel/".$cadastros_v['id']."/delete")}}" class="btn btn-danger">Delete</a>
 				</td>
 			</tr>
 		@endforeach

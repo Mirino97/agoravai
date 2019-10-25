@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\usuarios;
+use App\cadastros;
 
 class PagesController extends Controller
 {
@@ -24,7 +24,15 @@ class PagesController extends Controller
 
     public function laravel() 
     {
-    	/*Abaixo, estamos passando junto ao view "laravel" um objeto chamado usuarios com todos as informações presentes no model usuarios*/
-    	return view('laravel',['usuarios' => usuarios::all()]);
+    	/*Abaixo, estamos passando junto ao view "laravel" um objeto chamado cadastros com todos as informações presentes no model cadastros*/
+    	return view('laravel',['cadastros' => cadastros::all()]);
     }
+
+    public function edit() 
+    {
+
+        return view('edit',['cadastros' => cadastros::all()]);
+
+    }
+
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\usuarios;
+use App\cadastros;
 
 class FormController extends Controller
 {
@@ -21,18 +21,18 @@ class FormController extends Controller
 
         try {
 
-            usuarios::Create($validated);
+            cadastros::Create($validated);
 
         } catch (\Exception $e) {
 
             return redirect('laravel')->withErrors('O e-mail cadastrado já está sendo usado!');
         }
         
-        //O comando abaixo faz a mesma coisa que os comentários abaixo, porém de uma maneira muito mais concisa e rápida. O "usuarios" é referente ao nome do model, o comandó é "create". Dentro do create, faço um pedido de "request" do formulário que recebo o post e passo adiante para o create. Os campos "nome, telefone e email" devem estar dentro do Model como fillable, para garantir a segurança do formulário.
-        //usuarios::Create($validated);
+        //O comando abaixo faz a mesma coisa que os comentários abaixo, porém de uma maneira muito mais concisa e rápida. O "cadastros" é referente ao nome do model, o comandó é "create". Dentro do create, faço um pedido de "request" do formulário que recebo o post e passo adiante para o create. Os campos "nome, telefone e email" devem estar dentro do Model como fillable, para garantir a segurança do formulário.
+        //cadastros::Create($validated);
 
-    	/*Após receber o post na variável $request, é necessário criar uma nova instância do model usuarios.php para que possamos jogar os dados no banco de dados.*/
-    	//$cadastro = new usuarios;
+    	/*Após receber o post na variável $request, é necessário criar uma nova instância do model cadastros.php para que possamos jogar os dados no banco de dados.*/
+    	//$cadastro = new cadastros;
     	/*Abaixo, passamos as informações presentes na variável $request para a instância do model chamada $cadastro*/
     	//$cadastro->nome = request('nome');
     	//$cadastro->telefone = request('telefone');
@@ -49,16 +49,16 @@ class FormController extends Controller
     /* A função edit recebe o wildcard do web.php e armazena na variável $id*/
     // public function edit ($id) {} - DESCONTINUADO PELO DE BAIXO
 
-    // Através da feature Route Model Binding (própria do Laravel), se utilizarmos o nome do Model (usuarios) e uma variavel com o mesmo nome do wildcard, o comando usuarios::find($id) (comentado a baixo) já é interpretado automaticamente
-    public function edit (usuarios $user) {
+    // Através da feature Route Model Binding (própria do Laravel), se utilizarmos o nome do Model (cadastros) e uma variavel com o mesmo nome do wildcard, o comando cadastros::find($id) (comentado a baixo) já é interpretado automaticamente
+    public function edit (cadastros $user) {
 
-        /* Procura (find) o $id no banco de dados usuarios e armazena todo o resultado na variável $teste*/
-        //$user = usuarios::find($id);
+        /* Procura (find) o $id no banco de dados cadastros e armazena todo o resultado na variável $teste*/
+        //$user = cadastros::find($id);
         /* Encaminha o usuário para a view showteste com a variável $teste compactada. o Compact envia todos os dados para a view alvo*/
         return view('edit', compact('user'));
     }
 
-    public function update (usuarios $user) {
+    public function update (cadastros $user) {
 
         //Recebendo o $user de cima, cria o update com as novas informações do usuário através do formulário post recebido
         $user->update(request(['nome', 'telefone', 'email']));
@@ -74,7 +74,7 @@ class FormController extends Controller
 
     }
 
-    public function destroy (usuarios $user) {
+    public function destroy (cadastros $user) {
         
         $user->delete();
 
