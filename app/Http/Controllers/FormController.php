@@ -55,7 +55,7 @@ class FormController extends Controller
         /* Procura (find) o $id no banco de dados usuarios e armazena todo o resultado na variável $teste*/
         //$user = usuarios::find($id);
         /* Encaminha o usuário para a view showteste com a variável $teste compactada. o Compact envia todos os dados para a view alvo*/
-        return view('showteste', compact('user'));
+        return view('edit', compact('user'));
     }
 
     public function update (usuarios $user) {
