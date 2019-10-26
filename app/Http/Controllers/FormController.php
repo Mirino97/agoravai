@@ -24,8 +24,16 @@ class FormController extends Controller
             cadastros::Create($validated);
 
         } catch (\Exception $e) {
-
-            return redirect('laravel')->withErrors('O e-mail cadastrado já está sendo usado!');
+            
+            switch ($e) {
+                case ($e->errorInfo['0'] === '23000'):
+                    return redirect('laravel')->withErrors('Este e-mail já está cadastrado! Código do erro: '.$e->errorInfo['0'].'.');
+                    break;
+                
+                default:
+                    return redirect('laravel')->withErrors('Oops! Um erro aconteceu! Favor encaminhar o código para um técnico responsável. Código: '.$e->errorInfo['0'].'.');
+                    break;
+            }
         }
         
         //O comando abaixo faz a mesma coisa que os comentários abaixo, porém de uma maneira muito mais concisa e rápida. O "cadastros" é referente ao nome do model, o comandó é "create". Dentro do create, faço um pedido de "request" do formulário que recebo o post e passo adiante para o create. Os campos "nome, telefone e email" devem estar dentro do Model como fillable, para garantir a segurança do formulário.
